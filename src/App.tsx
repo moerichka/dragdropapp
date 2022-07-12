@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import s from "./App.module.scss";
 
-function App() {
+import InputField from "./components/InputField"
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={s.app}>
+      <header className={s.header}>
+        <div className={s.headercontainer}>
+          <h1 className={s.headertitle}>CoolTaskManager</h1>
+        </div>
       </header>
+      <main className={s.main}>
+        <section className={s.firstsection}>
+          <InputField />
+        </section>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
