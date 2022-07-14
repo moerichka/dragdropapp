@@ -2,8 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 $bg-color : hsla(220, 40%, 40%, 1);
+$bg-color-hover : hsla(220, 40%, 50%, 1);
 $white : hsla(0, 100%, 100%, 1);
 $black : hsla(0, 0%, 0%, 1);
+
+$transition: 0.3s;
 
 /* ---nullification--- */
 *{padding: 0; margin: 0; border: 0;}

@@ -1,17 +1,40 @@
-import React from 'react'
-import s from "./inputField.module.scss"
+import React, { useRef } from "react";
+import s from "./inputField.module.scss";
 
-const InputField : React.FC = () => {
-  return (
-    <div className={s.inputField}>
-        <div className={s.container}>
-            <form className={s.form}>
-                <input type="text" placeholder='Add a new task' className={s.input} />
-                <button className={s.submit} type="submit">Go</button>
-            </form>
-        </div>
-    </div>
-  )
+interface Props {
+  todo: string;
+  setTodo: React.Dispatch<React.SetStateAction<string>>;
+  handleAdd: (e: React.FormEvent) => void;
 }
 
-export default InputField
+const InputField: React.FC<Props> = (props) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  return (
+    <div className={s.inputField}>
+      <div className={s.container}>
+        <form
+          className={s.form}
+          onSubmit={(e) => {
+            props.handleAdd(e);
+            inputRef.current?.blur();
+          }}
+        >
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Add a new task"
+            className={s.input}
+            value={props?.todo}
+            onChange={(e) => props?.setTodo(e.target.value)}
+          />
+          <button className={s.submit} type="submit">
+            Go
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default InputField;
