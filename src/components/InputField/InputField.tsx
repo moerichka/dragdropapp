@@ -2,8 +2,8 @@ import React, { useRef } from "react";
 import s from "./inputField.module.scss";
 
 interface Props {
-  todo: string;
-  setTodo: React.Dispatch<React.SetStateAction<string>>;
+  task: string;
+  setTask: React.Dispatch<React.SetStateAction<string>>;
   handleAdd: (e: React.FormEvent) => void;
 }
 
@@ -25,8 +25,8 @@ const InputField: React.FC<Props> = (props) => {
             type="text"
             placeholder="Add a new task"
             className={s.input}
-            value={props?.todo}
-            onChange={(e) => props?.setTodo(e.target.value)}
+            value={props?.task}
+            onChange={(e) => props?.setTask(e.target.value)}
           />
           <button className={s.submit} type="submit">
             Go
