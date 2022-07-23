@@ -1,12 +1,21 @@
 @import-normalize;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-$bg-color : hsla(220, 40%, 40%, 1);
-$bg-color-hover : hsla(220, 40%, 50%, 1);
+$bg-color : hsla(261, 33%, 15%, 1);
+$bg-color-hover : hsla(261, 33%, 25%, 1);
+$bg-element: hsla(208, 87%, 82%, 1);
+$bg-element1: hsla(38, 69%, 68%, 1);
+$bg-element2: hsla(346, 31%, 63%, 1);
+$bg-element3: hsla(319, 28%, 53%, 1);
+$bg-element3-hover: hsla(319, 28%, 60%, 1);
+$bg-element4: hsla(300, 1%, 41%, 1);
+$bg-element5: hsla(135, 30%, 37%, 1);
+$bg-element5-hover: hsla(135, 30%, 45%, 1);
 $white : hsla(0, 100%, 100%, 1);
 $black : hsla(0, 0%, 0%, 1);
 
-$transition: 0.3s;
+$transition03: 0.3s;
+$transition02: 0.2s;
 
 /* ---nullification--- */
 *{padding: 0; margin: 0; border: 0;}

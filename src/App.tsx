@@ -9,6 +9,7 @@ import { Task } from "./model";
 const App: React.FC = () => {
   const [task, setTask] = useState<string>("")
   const [tasks, setTasks] = useState<Task[]>([])
+  console.log('tasks: ', tasks);
 
   const handleAdd = (e: React.FormEvent) : void =>{
     e.preventDefault()

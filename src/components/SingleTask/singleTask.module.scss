@@ -1,1 +1,41 @@
-@import "../../index.scss"
+@import "../../index.scss";
+
+.singleTask{
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: $bg-element3;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    transition: $transition03;
+    &:hover{
+        background-color: $bg-element3-hover;
+    }
+    &[data-iscomplited="true"]{
+        background-color: $bg-element5;
+    }
+    &[data-iscomplited="true"]:hover{
+        background-color: $bg-element5-hover;
+    }
+}
+.singletext{
+    font-weight: 500;
+    font-size: 18px;
+}
+.icons{
+    font-size: 20px;
+    color: $bg-color;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.icon{
+    cursor: pointer;
+    transition: $transition03;
+    &:hover{
+        transform: scale(1.05) translateY(-2px);
+        color: $white;
+    }
+}
