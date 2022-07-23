@@ -29,6 +29,7 @@ const SingleTask: React.FC<Props> = (props) => {
         task.id === id ? { ...task, isDone: !task.isDone } : task
       )
     );
+    setEdit(false)
   };
 
   const handleDelete = (id: number) => {
@@ -64,6 +65,7 @@ const SingleTask: React.FC<Props> = (props) => {
       <div className={s.icons}>
         <span
           className={s.icon}
+          data-ishidden={props.task.isDone}
           onClick={() => !edit && !props.task.isDone && setEdit(!edit)}
         >
           <FiEdit3 />

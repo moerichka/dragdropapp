@@ -4,7 +4,7 @@
     display: flex;
     width: 100%;
     border-radius: 5px;
-    padding: 20px;
+    padding: 20px 20px 18px 20px;
     background-color: $bg-element3;
     align-items: baseline;
     justify-content: space-between;
@@ -21,8 +21,24 @@
     }
 }
 .singletext{
+    height: 25px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
+    padding-bottom: 2px;
+}
+.singleinput{
+    font-weight: 500;
+    font-size: 20px;
+    background-color: transparent;
+    color: inherit;
+    max-height: 100%;
+    width: 100%;
+    border-bottom: 1px solid $bg-color;
+    padding-bottom: 2px;
+    transition: $transition03;
+    &:focus{
+        border-bottom-color: $white;
+    }
 }
 .icons{
     font-size: 20px;
@@ -37,5 +53,9 @@
     &:hover{
         transform: scale(1.05) translateY(-2px);
         color: $white;
+    }
+    &[data-ishidden="true"]{
+        opacity: 0;
+        pointer-events: none;
     }
 }
