@@ -4,7 +4,8 @@ export type Actions =
   | { type: "add"; payload: string }
   | { type: "remove"; payload: number }
   | { type: "done"; payload: number }
-  | { type: "edit"; payload: { id: number; task: string } };
+  | { type: "edit"; payload: { id: number; task: string } }
+  | { type: "rebuild"; payload: Task[]};
 
 const TasksReducer = (state: Task[], action: Actions) => {
   const {type, payload} = action  
@@ -27,6 +28,8 @@ const TasksReducer = (state: Task[], action: Actions) => {
           ? { ...task, task: payload.task }
           : task
       );
+    case "rebuild":
+      return payload
 
     default:
       return state;
