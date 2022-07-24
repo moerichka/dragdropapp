@@ -17,3 +17,24 @@
     max-width: 1400px;
     padding: 20px;
 }
+
+.active{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.done{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.taskheader{
+    font-size: 22px;
+}
+
+.tasks{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
