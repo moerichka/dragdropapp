@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState} from "react";
 import s from "./singleTask.module.scss";
 
 import { Task } from "../../model";
@@ -7,10 +7,12 @@ import { FiEdit3 } from "react-icons/fi";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { BsCheckCircle } from "react-icons/bs";
 
+import {Actions} from "../../reducer/tasksReducer"
+
 interface Props {
   task: Task;
-  tasks: Task[];
-  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+  tasksState: Task[];
+  tasksDispatch: React.Dispatch<Actions>;
 }
 
 const SingleTask: React.FC<Props> = (props) => {
@@ -24,23 +26,17 @@ const SingleTask: React.FC<Props> = (props) => {
   },[edit])
 
   const handleDone = (id: number) => {
-    props.setTasks((prev) =>
-      prev.map((task) =>
-        task.id === id ? { ...task, isDone: !task.isDone } : task
-      )
-    );
+    props.tasksDispatch({type: "done", payload: id})
     setEdit(false)
   };
 
   const handleDelete = (id: number) => {
-    props.setTasks((prev) => prev.filter((task) => task.id !== id));
+    props.tasksDispatch({type: "remove", payload: id})
   };
 
   const handleEdit = (e: React.FormEvent, id: number) => {
     e.preventDefault();
-    props.setTasks((prev) =>
-      prev.map((task) => (task.id === id ? { ...task, task: editTask } : task))
-    );
+    props.tasksDispatch({type: "edit", payload: {id: id, task: editTask}})
     setEdit(false)
   };
 
