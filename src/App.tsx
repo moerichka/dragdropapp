@@ -4,8 +4,6 @@ import s from "./App.module.scss";
 import InputField from "./components/InputField";
 import TaskList from "./components/TaskList";
 
-import { Task } from "./model";
-
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import TasksReducer from "./reducer/tasksReducer";
 
